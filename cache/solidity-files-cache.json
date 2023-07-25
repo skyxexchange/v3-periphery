@@ -1,0 +1,5415 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/NonfungiblePositionManager.sol": {
+      "lastModificationDate": 1690276838745,
+      "contentHash": "f62d2619cdcdc536e017be7b23446d26",
+      "sourceName": "contracts/NonfungiblePositionManager.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol",
+        "@skyxexchange/v3-core/contracts/libraries/FixedPoint128.sol",
+        "@skyxexchange/v3-core/contracts/libraries/FullMath.sol",
+        "./interfaces/INonfungiblePositionManager.sol",
+        "./interfaces/INonfungibleTokenPositionDescriptor.sol",
+        "./libraries/PositionKey.sol",
+        "./libraries/PoolAddress.sol",
+        "./base/LiquidityManagement.sol",
+        "./base/PeripheryImmutableState.sol",
+        "./base/Multicall.sol",
+        "./base/ERC721Permit.sol",
+        "./base/PeripheryValidation.sol",
+        "./base/SelfPermit.sol",
+        "./base/PoolInitializer.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "NonfungiblePositionManager"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/INonfungibleTokenPositionDescriptor.sol": {
+      "lastModificationDate": 1689404607834,
+      "contentHash": "65b2c99d12e9b554a0c402a3880c09e8",
+      "sourceName": "contracts/interfaces/INonfungibleTokenPositionDescriptor.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./INonfungiblePositionManager.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "INonfungibleTokenPositionDescriptor"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol": {
+      "lastModificationDate": 1690276786721,
+      "contentHash": "679f134cea5a7d48b27efe3cc930221d",
+      "sourceName": "contracts/interfaces/INonfungiblePositionManager.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol",
+        "@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol",
+        "./IPoolInitializer.sol",
+        "./IERC721Permit.sol",
+        "./IPeripheryPayments.sol",
+        "./IPeripheryImmutableState.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "INonfungiblePositionManager"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/PositionKey.sol": {
+      "lastModificationDate": 1689404607826,
+      "contentHash": "75d1e33f18d1694897fcca697b305049",
+      "sourceName": "contracts/libraries/PositionKey.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "PositionKey"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/PoolAddress.sol": {
+      "lastModificationDate": 1690277093625,
+      "contentHash": "2b3031aa4fb4cfe760579a0659d807ee",
+      "sourceName": "contracts/libraries/PoolAddress.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "PoolAddress"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/base/LiquidityManagement.sol": {
+      "lastModificationDate": 1690276807417,
+      "contentHash": "e9574f42fcc53afa490100450e50b21a",
+      "sourceName": "contracts/base/LiquidityManagement.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/interfaces/callback/ISkyXV3MintCallback.sol",
+        "@skyxexchange/v3-core/contracts/libraries/TickMath.sol",
+        "../libraries/PoolAddress.sol",
+        "../libraries/CallbackValidation.sol",
+        "../libraries/LiquidityAmounts.sol",
+        "./PeripheryPayments.sol",
+        "./PeripheryImmutableState.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "LiquidityManagement"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/base/PeripheryImmutableState.sol": {
+      "lastModificationDate": 1690276786720,
+      "contentHash": "fbf76a4f3578f3408b37b16f264431c6",
+      "sourceName": "contracts/base/PeripheryImmutableState.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Factory.sol",
+        "../interfaces/IPeripheryImmutableState.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "PeripheryImmutableState"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/base/Multicall.sol": {
+      "lastModificationDate": 1689404607832,
+      "contentHash": "97e35fe1126f33cbfe6e70ba30f14fb8",
+      "sourceName": "contracts/base/Multicall.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IMulticall.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "Multicall"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/base/ERC721Permit.sol": {
+      "lastModificationDate": 1689404607832,
+      "contentHash": "e5e85a0082c3c19cab39d3dcd5604f34",
+      "sourceName": "contracts/base/ERC721Permit.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "@openzeppelin/contracts/utils/Address.sol",
+        "../libraries/ChainId.sol",
+        "../interfaces/external/IERC1271.sol",
+        "../interfaces/IERC721Permit.sol",
+        "./BlockTimestamp.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "ERC721Permit"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/base/PeripheryValidation.sol": {
+      "lastModificationDate": 1689404607833,
+      "contentHash": "5882d6561b225c611dbecbbe4b60b21f",
+      "sourceName": "contracts/base/PeripheryValidation.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./BlockTimestamp.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "PeripheryValidation"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/base/SelfPermit.sol": {
+      "lastModificationDate": 1689404607831,
+      "contentHash": "f5a28c4a86996c97e107f97a57419728",
+      "sourceName": "contracts/base/SelfPermit.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/drafts/IERC20Permit.sol",
+        "../interfaces/ISelfPermit.sol",
+        "../interfaces/external/IERC20PermitAllowed.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "SelfPermit"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/base/PoolInitializer.sol": {
+      "lastModificationDate": 1690276786720,
+      "contentHash": "b43d8256c8ba43c18b3dff4c99da5725",
+      "sourceName": "contracts/base/PoolInitializer.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Factory.sol",
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol",
+        "./PeripheryImmutableState.sol",
+        "../interfaces/IPoolInitializer.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "PoolInitializer"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol": {
+      "lastModificationDate": 1690277110848,
+      "contentHash": "06d3d3d1ba9cdda33565513ec0c53cb4",
+      "sourceName": "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./pool/ISkyXV3PoolImmutables.sol",
+        "./pool/ISkyXV3PoolState.sol",
+        "./pool/ISkyXV3PoolDerivedState.sol",
+        "./pool/ISkyXV3PoolActions.sol",
+        "./pool/ISkyXV3PoolOwnerActions.sol",
+        "./pool/ISkyXV3PoolEvents.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "ISkyXV3Pool"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/libraries/FixedPoint128.sol": {
+      "lastModificationDate": 1690277110848,
+      "contentHash": "1298041826d8bf2a444d660fc3b6aebd",
+      "sourceName": "@skyxexchange/v3-core/contracts/libraries/FixedPoint128.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.0"
+      ],
+      "artifacts": [
+        "FixedPoint128"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/libraries/FullMath.sol": {
+      "lastModificationDate": 1690277110850,
+      "contentHash": "c3f03759b6500f54f402f1963af1c256",
+      "sourceName": "@skyxexchange/v3-core/contracts/libraries/FullMath.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.0 <0.8.0"
+      ],
+      "artifacts": [
+        "FullMath"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/IPoolInitializer.sol": {
+      "lastModificationDate": 1689404607833,
+      "contentHash": "11600b3ed90d17aa07e53a77430a6d6c",
+      "sourceName": "contracts/interfaces/IPoolInitializer.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "IPoolInitializer"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/IERC721Permit.sol": {
+      "lastModificationDate": 1689404607835,
+      "contentHash": "9073d26f60e6253b2dfbc103c78cf70d",
+      "sourceName": "contracts/interfaces/IERC721Permit.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC721/IERC721.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "IERC721Permit"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/IPeripheryPayments.sol": {
+      "lastModificationDate": 1689404607837,
+      "contentHash": "8aa07bcaad7779d2bae8089adef235bf",
+      "sourceName": "contracts/interfaces/IPeripheryPayments.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "IPeripheryPayments"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/IPeripheryImmutableState.sol": {
+      "lastModificationDate": 1690276786721,
+      "contentHash": "f2d4eafad98d75f68686ea177a0b7b97",
+      "sourceName": "contracts/interfaces/IPeripheryImmutableState.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IPeripheryImmutableState"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol": {
+      "lastModificationDate": 1690277110854,
+      "contentHash": "7fe751b35ebe8466b56415cce55a7074",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IERC721Metadata"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol": {
+      "lastModificationDate": 1690277110854,
+      "contentHash": "889ec04fca4214581eef408fff230efa",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IERC721Enumerable"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1690277110853,
+      "contentHash": "1607fe9cc333c6de30f5098d45061a0b",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IERC721"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/introspection/IERC165.sol": {
+      "lastModificationDate": 1690277108213,
+      "contentHash": "253edeb099cfd6a3b0501d2620312e3e",
+      "sourceName": "@openzeppelin/contracts/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/CallbackValidation.sol": {
+      "lastModificationDate": 1690276786720,
+      "contentHash": "80fef46249acf1141bb0955c06c5c96a",
+      "sourceName": "contracts/libraries/CallbackValidation.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol",
+        "./PoolAddress.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "CallbackValidation"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/LiquidityAmounts.sol": {
+      "lastModificationDate": 1690276765607,
+      "contentHash": "6135a262264bdca5bd8990406c7063bc",
+      "sourceName": "contracts/libraries/LiquidityAmounts.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/libraries/FullMath.sol",
+        "@skyxexchange/v3-core/contracts/libraries/FixedPoint96.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "LiquidityAmounts"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/base/PeripheryPayments.sol": {
+      "lastModificationDate": 1689404607832,
+      "contentHash": "0b56335ed00b2716be433b2c78d9fc1f",
+      "sourceName": "contracts/base/PeripheryPayments.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "../interfaces/IPeripheryPayments.sol",
+        "../interfaces/external/IWETH9.sol",
+        "../libraries/TransferHelper.sol",
+        "./PeripheryImmutableState.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "PeripheryPayments"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/libraries/TickMath.sol": {
+      "lastModificationDate": 1690277110851,
+      "contentHash": "6bd9ce5056f36b9763627bce69998c83",
+      "sourceName": "@skyxexchange/v3-core/contracts/libraries/TickMath.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0 <0.8.0"
+      ],
+      "artifacts": [
+        "TickMath"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/interfaces/callback/ISkyXV3MintCallback.sol": {
+      "lastModificationDate": 1690277112575,
+      "contentHash": "1a5e855aadc1069432b82002e9378b4b",
+      "sourceName": "@skyxexchange/v3-core/contracts/interfaces/callback/ISkyXV3MintCallback.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "ISkyXV3MintCallback"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/interfaces/pool/ISkyXV3PoolImmutables.sol": {
+      "lastModificationDate": 1690277112576,
+      "contentHash": "34ddbc127eea388f292cbd1551bd6ebf",
+      "sourceName": "@skyxexchange/v3-core/contracts/interfaces/pool/ISkyXV3PoolImmutables.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "ISkyXV3PoolImmutables"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/interfaces/pool/ISkyXV3PoolState.sol": {
+      "lastModificationDate": 1690277112576,
+      "contentHash": "b66ab3a7ffc02258ec35664962101dc8",
+      "sourceName": "@skyxexchange/v3-core/contracts/interfaces/pool/ISkyXV3PoolState.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "ISkyXV3PoolState"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/interfaces/pool/ISkyXV3PoolDerivedState.sol": {
+      "lastModificationDate": 1690277112576,
+      "contentHash": "510dd16433353717207cd920e733d03d",
+      "sourceName": "@skyxexchange/v3-core/contracts/interfaces/pool/ISkyXV3PoolDerivedState.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "ISkyXV3PoolDerivedState"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/interfaces/pool/ISkyXV3PoolOwnerActions.sol": {
+      "lastModificationDate": 1690277112576,
+      "contentHash": "8cc4f0b63e6e381c8de9622e45999bef",
+      "sourceName": "@skyxexchange/v3-core/contracts/interfaces/pool/ISkyXV3PoolOwnerActions.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "ISkyXV3PoolOwnerActions"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/interfaces/pool/ISkyXV3PoolEvents.sol": {
+      "lastModificationDate": 1690277112576,
+      "contentHash": "14ac887a520728d34af60d5393052dff",
+      "sourceName": "@skyxexchange/v3-core/contracts/interfaces/pool/ISkyXV3PoolEvents.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "ISkyXV3PoolEvents"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/interfaces/pool/ISkyXV3PoolActions.sol": {
+      "lastModificationDate": 1690277112576,
+      "contentHash": "44a314f2c73cf7a98d09333169a7866b",
+      "sourceName": "@skyxexchange/v3-core/contracts/interfaces/pool/ISkyXV3PoolActions.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "ISkyXV3PoolActions"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/libraries/FixedPoint96.sol": {
+      "lastModificationDate": 1690277110850,
+      "contentHash": "f3ab03d6bbfd7c6834ecd3fc311cb0e7",
+      "sourceName": "@skyxexchange/v3-core/contracts/libraries/FixedPoint96.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.0"
+      ],
+      "artifacts": [
+        "FixedPoint96"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/external/IWETH9.sol": {
+      "lastModificationDate": 1689404607836,
+      "contentHash": "b2db1bd28998866868200957d0d964c5",
+      "sourceName": "contracts/interfaces/external/IWETH9.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "IWETH9"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/TransferHelper.sol": {
+      "lastModificationDate": 1689404607828,
+      "contentHash": "356c05e982cd7d517ee9a8af0104c30f",
+      "sourceName": "contracts/libraries/TransferHelper.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "TransferHelper"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1690277110853,
+      "contentHash": "70ec621ea910798b6c590a0b402a5bb9",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Factory.sol": {
+      "lastModificationDate": 1690277110848,
+      "contentHash": "fe43ef92ea86ee183c0b169baa00ed98",
+      "sourceName": "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Factory.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "ISkyXV3Factory"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/IMulticall.sol": {
+      "lastModificationDate": 1689404607833,
+      "contentHash": "a2e56a9714654fdbdf3a7bd35ad4ebd1",
+      "sourceName": "contracts/interfaces/IMulticall.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "IMulticall"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/ChainId.sol": {
+      "lastModificationDate": 1689404607827,
+      "contentHash": "99798e248a42a68a14fb09975b97b07e",
+      "sourceName": "contracts/libraries/ChainId.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0"
+      ],
+      "artifacts": [
+        "ChainId"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/external/IERC1271.sol": {
+      "lastModificationDate": 1689404607837,
+      "contentHash": "577ba89decfbc12cb4850de84ff1e5cd",
+      "sourceName": "contracts/interfaces/external/IERC1271.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IERC1271"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/base/BlockTimestamp.sol": {
+      "lastModificationDate": 1689404607832,
+      "contentHash": "9558ed78048252f933fde4b5320eb84c",
+      "sourceName": "contracts/base/BlockTimestamp.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "BlockTimestamp"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1690277108220,
+      "contentHash": "fc7c67d7b17cde979a685143a26b2bc8",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1690277110853,
+      "contentHash": "3fa5b045af1067a925e02da647523224",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../utils/Context.sol",
+        "./IERC721.sol",
+        "./IERC721Metadata.sol",
+        "./IERC721Enumerable.sol",
+        "./IERC721Receiver.sol",
+        "../../introspection/ERC165.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol",
+        "../../utils/EnumerableSet.sol",
+        "../../utils/EnumerableMap.sol",
+        "../../utils/Strings.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "ERC721"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/math/SafeMath.sol": {
+      "lastModificationDate": 1690277108220,
+      "contentHash": "871a094d6b6b4c3714946e86329f2fa2",
+      "sourceName": "@openzeppelin/contracts/math/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1690277108221,
+      "contentHash": "0a0b5402f31b9b60fdb741918c57247f",
+      "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Strings"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1690277108220,
+      "contentHash": "2adbd82f6d055a4751566d4671512b03",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/introspection/ERC165.sol": {
+      "lastModificationDate": 1690277108212,
+      "contentHash": "674a2137d8125c497b9dc83b82235171",
+      "sourceName": "@openzeppelin/contracts/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/utils/EnumerableMap.sol": {
+      "lastModificationDate": 1690277108220,
+      "contentHash": "d35f59d1f5a637f1c9d80319c401c779",
+      "sourceName": "@openzeppelin/contracts/utils/EnumerableMap.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "EnumerableMap"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/utils/EnumerableSet.sol": {
+      "lastModificationDate": 1690277108222,
+      "contentHash": "67da1a55369b7665b43457144add6761",
+      "sourceName": "@openzeppelin/contracts/utils/EnumerableSet.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "EnumerableSet"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1690277110854,
+      "contentHash": "b00bb215c82f73f87e6fed90b74f67d6",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IERC721Receiver"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/ISelfPermit.sol": {
+      "lastModificationDate": 1689404607838,
+      "contentHash": "bb6ee7140c27d283bf7c5f5780c8fcd9",
+      "sourceName": "contracts/interfaces/ISelfPermit.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "ISelfPermit"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/external/IERC20PermitAllowed.sol": {
+      "lastModificationDate": 1689404607837,
+      "contentHash": "3cad3f665d74d11ab6a79c298d6f27fa",
+      "sourceName": "contracts/interfaces/external/IERC20PermitAllowed.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IERC20PermitAllowed"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/drafts/IERC20Permit.sol": {
+      "lastModificationDate": 1690277108219,
+      "contentHash": "554ef6825dd2112860a7f82be25dab45",
+      "sourceName": "@openzeppelin/contracts/drafts/IERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Permit"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/MockTimeNonfungiblePositionManager.sol": {
+      "lastModificationDate": 1689404607822,
+      "contentHash": "2040cbe79f7a857e3e1a4dac8abe62b8",
+      "sourceName": "contracts/test/MockTimeNonfungiblePositionManager.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../NonfungiblePositionManager.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "MockTimeNonfungiblePositionManager"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/SqrtPriceMathPartial.sol": {
+      "lastModificationDate": 1690276765606,
+      "contentHash": "d3efe8d15ec48f657dc06151fb30e529",
+      "sourceName": "contracts/libraries/SqrtPriceMathPartial.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/libraries/FullMath.sol",
+        "@skyxexchange/v3-core/contracts/libraries/UnsafeMath.sol",
+        "@skyxexchange/v3-core/contracts/libraries/FixedPoint96.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "SqrtPriceMathPartial"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/libraries/UnsafeMath.sol": {
+      "lastModificationDate": 1690277110851,
+      "contentHash": "c2d88847ec7741938f1cecdfc808ee3b",
+      "sourceName": "@skyxexchange/v3-core/contracts/libraries/UnsafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "UnsafeMath"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/LiquidityAmountsTest.sol": {
+      "lastModificationDate": 1689404607822,
+      "contentHash": "d0cb8d63159b8c755001e7094b772567",
+      "sourceName": "contracts/test/LiquidityAmountsTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../libraries/LiquidityAmounts.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "LiquidityAmountsTest"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/PositionValue.sol": {
+      "lastModificationDate": 1690276786720,
+      "contentHash": "9150ffb82611af62678aacfaa7abbcc5",
+      "sourceName": "contracts/libraries/PositionValue.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol",
+        "@skyxexchange/v3-core/contracts/libraries/FixedPoint128.sol",
+        "@skyxexchange/v3-core/contracts/libraries/TickMath.sol",
+        "@skyxexchange/v3-core/contracts/libraries/Tick.sol",
+        "../interfaces/INonfungiblePositionManager.sol",
+        "./LiquidityAmounts.sol",
+        "./PoolAddress.sol",
+        "./PositionKey.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.8 <0.8.0"
+      ],
+      "artifacts": [
+        "PositionValue"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/libraries/Tick.sol": {
+      "lastModificationDate": 1690277110851,
+      "contentHash": "676260aa31ccdb40c282db65bc4f96d2",
+      "sourceName": "@skyxexchange/v3-core/contracts/libraries/Tick.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./LowGasSafeMath.sol",
+        "./SafeCast.sol",
+        "./TickMath.sol",
+        "./LiquidityMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Tick"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/libraries/LowGasSafeMath.sol": {
+      "lastModificationDate": 1690277110850,
+      "contentHash": "da3d2c9dee6eee74f85b44d901fe8d34",
+      "sourceName": "@skyxexchange/v3-core/contracts/libraries/LowGasSafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0"
+      ],
+      "artifacts": [
+        "LowGasSafeMath"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/libraries/SafeCast.sol": {
+      "lastModificationDate": 1690277110851,
+      "contentHash": "c89128b97d009587db99cae7763cfef0",
+      "sourceName": "@skyxexchange/v3-core/contracts/libraries/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/libraries/LiquidityMath.sol": {
+      "lastModificationDate": 1690277110849,
+      "contentHash": "b0a53c2998a11247a3d091e573acdff0",
+      "sourceName": "@skyxexchange/v3-core/contracts/libraries/LiquidityMath.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "LiquidityMath"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/PositionValueTest.sol": {
+      "lastModificationDate": 1689404607821,
+      "contentHash": "0e5c565688880e14e37f7f1f04cd96c6",
+      "sourceName": "contracts/test/PositionValueTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../libraries/PositionValue.sol",
+        "../interfaces/INonfungiblePositionManager.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "PositionValueTest"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/NonfungiblePositionManagerPositionsGasTest.sol": {
+      "lastModificationDate": 1689404607820,
+      "contentHash": "1d942fd8fa7fa97cb01d56cf5e670ca2",
+      "sourceName": "contracts/test/NonfungiblePositionManagerPositionsGasTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/INonfungiblePositionManager.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "NonfungiblePositionManagerPositionsGasTest"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/NonfungibleTokenPositionDescriptor.sol": {
+      "lastModificationDate": 1690276786720,
+      "contentHash": "32cc39f24de6076e64e505333aff874b",
+      "sourceName": "contracts/NonfungibleTokenPositionDescriptor.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol",
+        "./libraries/SafeERC20Namer.sol",
+        "./libraries/ChainId.sol",
+        "./interfaces/INonfungiblePositionManager.sol",
+        "./interfaces/INonfungibleTokenPositionDescriptor.sol",
+        "./interfaces/IERC20Metadata.sol",
+        "./libraries/PoolAddress.sol",
+        "./libraries/NFTDescriptor.sol",
+        "./libraries/TokenRatioSortOrder.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "NonfungibleTokenPositionDescriptor"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/SafeERC20Namer.sol": {
+      "lastModificationDate": 1689404607825,
+      "contentHash": "cfde14b2fa148250908eda222b53382e",
+      "sourceName": "contracts/libraries/SafeERC20Namer.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./AddressStringUtil.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "SafeERC20Namer"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/IERC20Metadata.sol": {
+      "lastModificationDate": 1689404607835,
+      "contentHash": "1c0aac2bcbcf1eee4da3507cde92a115",
+      "sourceName": "contracts/interfaces/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/NFTDescriptor.sol": {
+      "lastModificationDate": 1690276786720,
+      "contentHash": "8384836515eb9c4f42b32d37ac15f690",
+      "sourceName": "contracts/libraries/NFTDescriptor.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol",
+        "@skyxexchange/v3-core/contracts/libraries/TickMath.sol",
+        "@skyxexchange/v3-core/contracts/libraries/BitMath.sol",
+        "@skyxexchange/v3-core/contracts/libraries/FullMath.sol",
+        "@openzeppelin/contracts/utils/Strings.sol",
+        "@openzeppelin/contracts/math/SafeMath.sol",
+        "@openzeppelin/contracts/math/SignedSafeMath.sol",
+        "base64-sol/base64.sol",
+        "./HexStrings.sol",
+        "./NFTSVG.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0"
+      ],
+      "artifacts": [
+        "NFTDescriptor"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/TokenRatioSortOrder.sol": {
+      "lastModificationDate": 1689404607827,
+      "contentHash": "d7a9468bf522b06f6a793480f501b8d2",
+      "sourceName": "contracts/libraries/TokenRatioSortOrder.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "TokenRatioSortOrder"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/AddressStringUtil.sol": {
+      "lastModificationDate": 1689404607825,
+      "contentHash": "411d71093daeae05cd44c103dc64824c",
+      "sourceName": "contracts/libraries/AddressStringUtil.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "AddressStringUtil"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/HexStrings.sol": {
+      "lastModificationDate": 1689404607825,
+      "contentHash": "562fe2d74458647ed8ec7bbbeece63a0",
+      "sourceName": "contracts/libraries/HexStrings.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "HexStrings"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/NFTSVG.sol": {
+      "lastModificationDate": 1690276786720,
+      "contentHash": "2433d525200ffc7742fde6cdfe716739",
+      "sourceName": "contracts/libraries/NFTSVG.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/Strings.sol",
+        "@skyxexchange/v3-core/contracts/libraries/BitMath.sol",
+        "base64-sol/base64.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.6"
+      ],
+      "artifacts": [
+        "NFTSVG"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/base64-sol/base64.sol": {
+      "lastModificationDate": 1690277106095,
+      "contentHash": "22c37b79b2b97ee9cee2e8a5f4b9cd78",
+      "sourceName": "base64-sol/base64.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": [
+        "Base64"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/math/SignedSafeMath.sol": {
+      "lastModificationDate": 1690277108219,
+      "contentHash": "f90947ba3efcd88fec132a905c4c6b38",
+      "sourceName": "@openzeppelin/contracts/math/SignedSafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "SignedSafeMath"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/libraries/BitMath.sol": {
+      "lastModificationDate": 1690277110849,
+      "contentHash": "81e58372a134f05eb1a211a1efef8a1e",
+      "sourceName": "@skyxexchange/v3-core/contracts/libraries/BitMath.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "BitMath"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/TickLensTest.sol": {
+      "lastModificationDate": 1690276786721,
+      "contentHash": "7086647741d134a5d22da6323ee583ba",
+      "sourceName": "contracts/test/TickLensTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol",
+        "../lens/TickLens.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "TickLensTest"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/lens/TickLens.sol": {
+      "lastModificationDate": 1690276786720,
+      "contentHash": "d8be3dc3234a180b609a699052fc085a",
+      "sourceName": "contracts/lens/TickLens.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol",
+        "../interfaces/ITickLens.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "TickLens"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/ITickLens.sol": {
+      "lastModificationDate": 1689404607838,
+      "contentHash": "97137ce21fbdc704992b215f1b7cbe4f",
+      "sourceName": "contracts/interfaces/ITickLens.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "ITickLens"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/TestSkyXV3Callee.sol": {
+      "lastModificationDate": 1690277051979,
+      "contentHash": "ff180514dc1ad77eb9049a4fc16e786d",
+      "sourceName": "contracts/test/TestSkyXV3Callee.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/interfaces/callback/ISkyXV3SwapCallback.sol",
+        "@skyxexchange/v3-core/contracts/libraries/SafeCast.sol",
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "TestSkyXV3Callee"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/interfaces/callback/ISkyXV3SwapCallback.sol": {
+      "lastModificationDate": 1690277112575,
+      "contentHash": "d71d5a6d4db7577a34c29c7b0c14b05c",
+      "sourceName": "@skyxexchange/v3-core/contracts/interfaces/callback/ISkyXV3SwapCallback.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "ISkyXV3SwapCallback"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/lens/QuoterV2.sol": {
+      "lastModificationDate": 1690276807417,
+      "contentHash": "33b417035d496fbea615eacf89957953",
+      "sourceName": "contracts/lens/QuoterV2.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/libraries/SafeCast.sol",
+        "@skyxexchange/v3-core/contracts/libraries/TickMath.sol",
+        "@skyxexchange/v3-core/contracts/libraries/TickBitmap.sol",
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol",
+        "@skyxexchange/v3-core/contracts/interfaces/callback/ISkyXV3SwapCallback.sol",
+        "../interfaces/IQuoterV2.sol",
+        "../base/PeripheryImmutableState.sol",
+        "../libraries/Path.sol",
+        "../libraries/PoolAddress.sol",
+        "../libraries/CallbackValidation.sol",
+        "../libraries/PoolTicksCounter.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "QuoterV2"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/IQuoterV2.sol": {
+      "lastModificationDate": 1689404607834,
+      "contentHash": "d05ab58d7d5c927c5eb205eb7179d13a",
+      "sourceName": "contracts/interfaces/IQuoterV2.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "IQuoterV2"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/Path.sol": {
+      "lastModificationDate": 1689404607826,
+      "contentHash": "8c77deefa62a7600476db7122c811951",
+      "sourceName": "contracts/libraries/Path.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./BytesLib.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "Path"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/PoolTicksCounter.sol": {
+      "lastModificationDate": 1690276786720,
+      "contentHash": "44ab4bbf4e11ec2ee9640c9d45d522c6",
+      "sourceName": "contracts/libraries/PoolTicksCounter.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "PoolTicksCounter"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/libraries/TickBitmap.sol": {
+      "lastModificationDate": 1690277110851,
+      "contentHash": "a37b6629ee910c5581d86fce2d412c02",
+      "sourceName": "@skyxexchange/v3-core/contracts/libraries/TickBitmap.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./BitMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "TickBitmap"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/BytesLib.sol": {
+      "lastModificationDate": 1689404607829,
+      "contentHash": "6b8e95fb99a4d669e4a6dd8c549e06ee",
+      "sourceName": "contracts/libraries/BytesLib.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0 <0.8.0"
+      ],
+      "artifacts": [
+        "BytesLib"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/NFTDescriptorTest.sol": {
+      "lastModificationDate": 1689404607820,
+      "contentHash": "9257c385fa7de87963e0af9195705d4b",
+      "sourceName": "contracts/test/NFTDescriptorTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../libraries/NFTDescriptor.sol",
+        "../libraries/NFTSVG.sol",
+        "../libraries/HexStrings.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "NFTDescriptorTest"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/lens/Quoter.sol": {
+      "lastModificationDate": 1690276807417,
+      "contentHash": "e5154a4673701a4ed4ca6fccacaa29bb",
+      "sourceName": "contracts/lens/Quoter.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/libraries/SafeCast.sol",
+        "@skyxexchange/v3-core/contracts/libraries/TickMath.sol",
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol",
+        "@skyxexchange/v3-core/contracts/interfaces/callback/ISkyXV3SwapCallback.sol",
+        "../interfaces/IQuoter.sol",
+        "../base/PeripheryImmutableState.sol",
+        "../libraries/Path.sol",
+        "../libraries/PoolAddress.sol",
+        "../libraries/CallbackValidation.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "Quoter"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/IQuoter.sol": {
+      "lastModificationDate": 1689404607836,
+      "contentHash": "fe8b4279fc6b913c2b33c72db1ed3eb1",
+      "sourceName": "contracts/interfaces/IQuoter.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "IQuoter"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/TestCallbackValidation.sol": {
+      "lastModificationDate": 1690276786721,
+      "contentHash": "429b74dcfce31fe6e1b32af01f0b447e",
+      "sourceName": "contracts/test/TestCallbackValidation.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../libraries/CallbackValidation.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "TestCallbackValidation"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/PoolAddressTest.sol": {
+      "lastModificationDate": 1689404607823,
+      "contentHash": "aeaa968f8856e52bb6c91fe66cdfe9f2",
+      "sourceName": "contracts/test/PoolAddressTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../libraries/PoolAddress.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "PoolAddressTest"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/PeripheryImmutableStateTest.sol": {
+      "lastModificationDate": 1689404607824,
+      "contentHash": "bb7ad0038ac05f8defd4933cb2afc87d",
+      "sourceName": "contracts/test/PeripheryImmutableStateTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../base/PeripheryImmutableState.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "PeripheryImmutableStateTest"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/IV3Migrator.sol": {
+      "lastModificationDate": 1690276786720,
+      "contentHash": "ea6609069e45dd2759bf6afc2029afb5",
+      "sourceName": "contracts/interfaces/IV3Migrator.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IMulticall.sol",
+        "./ISelfPermit.sol",
+        "./IPoolInitializer.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "IV3Migrator"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/SelfPermitTest.sol": {
+      "lastModificationDate": 1689404607823,
+      "contentHash": "c7e26ec85f8823a341673aba9c127b7a",
+      "sourceName": "contracts/test/SelfPermitTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../base/SelfPermit.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "SelfPermitTest"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1690277110851,
+      "contentHash": "52659a61e7fb46afdc3d0f00c3a87da6",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../utils/Context.sol",
+        "./IERC20.sol",
+        "../../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/utils/Counters.sol": {
+      "lastModificationDate": 1690277108220,
+      "contentHash": "ebd32d219072a0232add3f1bb610731f",
+      "sourceName": "@openzeppelin/contracts/utils/Counters.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Counters"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/drafts/ERC20Permit.sol": {
+      "lastModificationDate": 1690277108219,
+      "contentHash": "d3da235724edc8bc7d00aedca06d3274",
+      "sourceName": "@openzeppelin/contracts/drafts/ERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../token/ERC20/ERC20.sol",
+        "./IERC20Permit.sol",
+        "../cryptography/ECDSA.sol",
+        "../utils/Counters.sol",
+        "./EIP712.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.5 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20Permit"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/cryptography/ECDSA.sol": {
+      "lastModificationDate": 1690277108211,
+      "contentHash": "e20d6c1a44aff02acbfd4696f53087e5",
+      "sourceName": "@openzeppelin/contracts/cryptography/ECDSA.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "ECDSA"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@openzeppelin/contracts/drafts/EIP712.sol": {
+      "lastModificationDate": 1690277108219,
+      "contentHash": "978da83ab8d1ff945e5d117d3ab7daab",
+      "sourceName": "@openzeppelin/contracts/drafts/EIP712.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "EIP712"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/TestERC20Permit.sol": {
+      "lastModificationDate": 1689404607819,
+      "contentHash": "78373ce191d10747ea7deecaa6a1161d",
+      "sourceName": "contracts/test/TestERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/drafts/ERC20Permit.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "TestERC20Permit"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/TestERC20PermitAllowed.sol": {
+      "lastModificationDate": 1689404607821,
+      "contentHash": "1155f731894166023f080fad7a0a5c80",
+      "sourceName": "contracts/test/TestERC20PermitAllowed.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./TestERC20Permit.sol",
+        "../interfaces/external/IERC20PermitAllowed.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "TestERC20PermitAllowed"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/TestERC20Metadata.sol": {
+      "lastModificationDate": 1689404607818,
+      "contentHash": "7fb24b0c0d377f5747b24816831536be",
+      "sourceName": "contracts/test/TestERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/drafts/ERC20Permit.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "TestERC20Metadata"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/SwapRouter.sol": {
+      "lastModificationDate": 1690276807434,
+      "contentHash": "c3ee1bfa20cf839aadb874bb931b4f49",
+      "sourceName": "contracts/SwapRouter.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/libraries/SafeCast.sol",
+        "@skyxexchange/v3-core/contracts/libraries/TickMath.sol",
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol",
+        "./interfaces/ISwapRouter.sol",
+        "./base/PeripheryImmutableState.sol",
+        "./base/PeripheryValidation.sol",
+        "./base/PeripheryPaymentsWithFee.sol",
+        "./base/Multicall.sol",
+        "./base/SelfPermit.sol",
+        "./libraries/Path.sol",
+        "./libraries/PoolAddress.sol",
+        "./libraries/CallbackValidation.sol",
+        "./interfaces/external/IWETH9.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "SwapRouter"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/base/PeripheryPaymentsWithFee.sol": {
+      "lastModificationDate": 1690276765606,
+      "contentHash": "1c5bc966aaf666215ad8756aa70ee5f0",
+      "sourceName": "contracts/base/PeripheryPaymentsWithFee.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@skyxexchange/v3-core/contracts/libraries/LowGasSafeMath.sol",
+        "./PeripheryPayments.sol",
+        "../interfaces/IPeripheryPaymentsWithFee.sol",
+        "../interfaces/external/IWETH9.sol",
+        "../libraries/TransferHelper.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "PeripheryPaymentsWithFee"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/ISwapRouter.sol": {
+      "lastModificationDate": 1690276786720,
+      "contentHash": "4749c02898d9b34f59f081934b5a2604",
+      "sourceName": "contracts/interfaces/ISwapRouter.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/interfaces/callback/ISkyXV3SwapCallback.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "ISwapRouter"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/interfaces/IPeripheryPaymentsWithFee.sol": {
+      "lastModificationDate": 1689404607833,
+      "contentHash": "cf3d11802bba945da909fcfe2faff853",
+      "sourceName": "contracts/interfaces/IPeripheryPaymentsWithFee.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IPeripheryPayments.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "IPeripheryPaymentsWithFee"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/MockTimeSwapRouter.sol": {
+      "lastModificationDate": 1689404607821,
+      "contentHash": "3b1c010d020fcb8c79151faa9a4a5d78",
+      "sourceName": "contracts/test/MockTimeSwapRouter.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../SwapRouter.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "MockTimeSwapRouter"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/V3Migrator.sol": {
+      "lastModificationDate": 1690276786720,
+      "contentHash": "7b1315bce83e91b86d9d2cf84fb407f4",
+      "sourceName": "contracts/V3Migrator.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/libraries/LowGasSafeMath.sol",
+        "@skyxexchange/v2-core/contracts/interfaces/ISkyXV2Pair.sol",
+        "./interfaces/INonfungiblePositionManager.sol",
+        "./libraries/TransferHelper.sol",
+        "./interfaces/IV3Migrator.sol",
+        "./base/PeripheryImmutableState.sol",
+        "./base/Multicall.sol",
+        "./base/SelfPermit.sol",
+        "./interfaces/external/IWETH9.sol",
+        "./base/PoolInitializer.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "V3Migrator"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v2-core/contracts/interfaces/ISkyXV2Pair.sol": {
+      "lastModificationDate": 1690277110924,
+      "contentHash": "6e77466684712680579edf05946fb4cd",
+      "sourceName": "@skyxexchange/v2-core/contracts/interfaces/ISkyXV2Pair.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "ISkyXV2Pair"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/TestMulticall.sol": {
+      "lastModificationDate": 1689404607821,
+      "contentHash": "591c2819a2612e2379a799403a7bfb1f",
+      "sourceName": "contracts/test/TestMulticall.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../base/Multicall.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "TestMulticall"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/PathTest.sol": {
+      "lastModificationDate": 1689404607819,
+      "contentHash": "f4b712efa783e21d1f7e5444f0c4cdcb",
+      "sourceName": "contracts/test/PathTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../libraries/Path.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "PathTest"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/TestPositionNFTOwner.sol": {
+      "lastModificationDate": 1689404607823,
+      "contentHash": "3dbdb23db4782d11e0975643f2ab19c6",
+      "sourceName": "contracts/test/TestPositionNFTOwner.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/external/IERC1271.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "TestPositionNFTOwner"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/libraries/OracleLibrary.sol": {
+      "lastModificationDate": 1690276786720,
+      "contentHash": "05178fa2f5139e5f5480a7c69fd0b1c4",
+      "sourceName": "contracts/libraries/OracleLibrary.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/libraries/FullMath.sol",
+        "@skyxexchange/v3-core/contracts/libraries/TickMath.sol",
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0 <0.8.0"
+      ],
+      "artifacts": [
+        "OracleLibrary"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/OracleTest.sol": {
+      "lastModificationDate": 1689903994144,
+      "contentHash": "c3f66529d1ff344b2b700f769922af61",
+      "sourceName": "contracts/test/OracleTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../libraries/OracleLibrary.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "OracleTest"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/Base64Test.sol": {
+      "lastModificationDate": 1689404607820,
+      "contentHash": "a385c7aa5afc4bd276ab45fd6a8a4dd6",
+      "sourceName": "contracts/test/Base64Test.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "base64-sol/base64.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "Base64Test"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/PoolTicksCounterTest.sol": {
+      "lastModificationDate": 1690276786721,
+      "contentHash": "e4b0cd1c067cc75ba962fc8d786642a8",
+      "sourceName": "contracts/test/PoolTicksCounterTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/interfaces/ISkyXV3Pool.sol",
+        "../libraries/PoolTicksCounter.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "PoolTicksCounterTest"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/lens/SkyXInterfaceMulticall.sol": {
+      "lastModificationDate": 1690277011248,
+      "contentHash": "46071d4bfd2af80c338446f1f66c0fab",
+      "sourceName": "contracts/lens/SkyXInterfaceMulticall.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "SkyXInterfaceMulticall"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/MockObservable.sol": {
+      "lastModificationDate": 1689404607822,
+      "contentHash": "eef84de96fe34838640f5d98842fc50e",
+      "sourceName": "contracts/test/MockObservable.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "MockObservable"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/contracts/test/MockObservations.sol": {
+      "lastModificationDate": 1690276765606,
+      "contentHash": "67c929ddc7134769aa2f5b428917653b",
+      "sourceName": "contracts/test/MockObservations.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@skyxexchange/v3-core/contracts/libraries/Oracle.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "MockObservations"
+      ]
+    },
+    "/Users/phunh.2510/Documents/digital-maxtech/skyx/v3-periphery/node_modules/@skyxexchange/v3-core/contracts/libraries/Oracle.sol": {
+      "lastModificationDate": 1690277110851,
+      "contentHash": "40af979a56a3e0538188d37c9cd463d2",
+      "sourceName": "@skyxexchange/v3-core/contracts/libraries/Oracle.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Oracle"
+      ]
+    }
+  }
+}
